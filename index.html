@@ -5,7 +5,7 @@
 </head>
 <body>
 
-Hello iOS - updated 7
+Hello iOS - updated 8
 <div id="page_loc"></div>
 <div id="isIOS"></div>
 <ul>
@@ -18,12 +18,12 @@ Hello iOS - updated 7
 
 <ul id="vids">
 	<li id="vid1">
-		<video width=320 height=240 controls poster="http://bb682f038cf7102193ca-e2867f0f5275ff3f41fc3fd790e33cad.r73.cf3.rackcdn.com/uploads/engvarg_morgan_try_76.jpg">
+		<video width=320  controls poster="http://bb682f038cf7102193ca-e2867f0f5275ff3f41fc3fd790e33cad.r73.cf3.rackcdn.com/uploads/engvarg_morgan_try_76.jpg">
 			<source src="http://bb682f038cf7102193ca-e2867f0f5275ff3f41fc3fd790e33cad.r73.cf3.rackcdn.com/uploads/engvarg_full_time.mp4" type="video/mp4">
 		</video>
 	</li>
 	<liid="vid2">
-		<video width=320 height=240 id="myVideo2" controls poster="http://bb682f038cf7102193ca-e2867f0f5275ff3f41fc3fd790e33cad.r73.cf3.rackcdn.com/uploads/engvarg_full_time.jpg">
+		<video width=320  id="myVideo2" controls poster="http://bb682f038cf7102193ca-e2867f0f5275ff3f41fc3fd790e33cad.r73.cf3.rackcdn.com/uploads/engvarg_full_time.jpg">
 			<source src="http://bb682f038cf7102193ca-e2867f0f5275ff3f41fc3fd790e33cad.r73.cf3.rackcdn.com/uploads/engvarg_morgan_try_76.mp4" type="video/mp4">
 		</video>
 	</li>
@@ -38,7 +38,7 @@ $(document).ready(function(){
 	var isiOS = (navigator.userAgent.match(/iPhone|iPad|iPod/i) !== null) ? true : false;
 	document.getElementById('isIOS').innerText = isiOS;
 
-	$('<video width="320" height="240" controls><source src="http://bb682f038cf7102193ca-e2867f0f5275ff3f41fc3fd790e33cad.r73.cf3.rackcdn.com/uploads/engvarg_morgan_try_76.mp4" type="video/mp4"></video>')
+	$('<video width="320"  controls><source src="http://bb682f038cf7102193ca-e2867f0f5275ff3f41fc3fd790e33cad.r73.cf3.rackcdn.com/uploads/engvarg_morgan_try_76.mp4" type="video/mp4"></video>')
 	.insertBefore("#vids li#vid1");
 
 });
