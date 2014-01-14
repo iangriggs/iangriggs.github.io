@@ -1,11 +1,13 @@
 <html>
 
 <head>
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 </head>
 <body>
 
 Hello iOS - updated 6
 <div id="page_loc"></div>
+<div id="isIOS"></div>
 <ul>
 	<li>
 <a href="http://bb682f038cf7102193ca-e2867f0f5275ff3f41fc3fd790e33cad.r73.cf3.rackcdn.com/uploads/engvarg_full_time.mp4" target="_blank"><img src="http://bb682f038cf7102193ca-e2867f0f5275ff3f41fc3fd790e33cad.r73.cf3.rackcdn.com/uploads/engvarg_full_time.jpg"></a>
@@ -30,6 +32,15 @@ Hello iOS - updated 6
 </body>
 
 <script>
+
+$(document).ready(function(){
+
+	var isiOS = (navigator.userAgent.match(/iPhone|iPad|iPod/i) !== null) ? true : false;
+	document.getElementById('isIOS').innerText = isiOS;
+
+});
+
+
     var loc = window.location.href;
 	console.log(loc);
 	document.getElementById('page_loc').innerText = loc;
