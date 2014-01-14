@@ -6,19 +6,42 @@
 
 Hello iOS - updated 
 <div id="page_loc"></div>
-<ul>
+<!--ul>
 	<li>
 <a href="http://bb682f038cf7102193ca-e2867f0f5275ff3f41fc3fd790e33cad.r73.cf3.rackcdn.com/uploads/engvarg_full_time.mp4" target="_blank"><img src="http://bb682f038cf7102193ca-e2867f0f5275ff3f41fc3fd790e33cad.r73.cf3.rackcdn.com/uploads/engvarg_full_time.jpg"></a>
 </li>
 <li>
 	<a href="http://bb682f038cf7102193ca-e2867f0f5275ff3f41fc3fd790e33cad.r73.cf3.rackcdn.com/uploads/engvarg_morgan_try_76.mp4" target="_blank"><img src="http://bb682f038cf7102193ca-e2867f0f5275ff3f41fc3fd790e33cad.r73.cf3.rackcdn.com/uploads/engvarg_morgan_try_76.jpg"></a></li>
-</ul>
+</ul-->
+
+
+<video src="http://bb682f038cf7102193ca-e2867f0f5275ff3f41fc3fd790e33cad.r73.cf3.rackcdn.com/uploads/engvarg_full_time.mp4" id="myVideo" autoplay controls></video>
+<input type="button" id="fs" value="Fullscreen" onclick="goFullscreen()" style="visibility:hidden">
 </body>
 
 <script>
     var loc = window.location.href;
 	console.log(loc);
 	document.getElementById('page_loc').innerText = loc;
+
+
+	  function addFullscreenButton() {
+
+        if (vid.webkitSupportsFullscreen) {
+
+            var fs = document.getElementById("fs");
+
+            fs.style.visibility = "visible";
+
+        }
+
+    }
+
+    function goFullscreen() {
+
+        vid.webkitEnterFullscreen();
+
+    }
 </script>
 
 
