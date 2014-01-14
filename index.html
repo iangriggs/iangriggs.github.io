@@ -5,7 +5,7 @@
 </head>
 <body>
 
-Hello iOS - updated 10
+Hello iOS - updated 11
 <div id="page_loc"></div>
 <div id="isIOS"></div>
 <ul>
@@ -38,7 +38,7 @@ $(document).ready(function(){
 	var isiOS = (navigator.userAgent.match(/iPhone|iPad|iPod/i) !== null) ? true : false;
 	document.getElementById('isIOS').innerText = isiOS;
 
-	$('<video controls><source src="http://bb682f038cf7102193ca-e2867f0f5275ff3f41fc3fd790e33cad.r73.cf3.rackcdn.com/uploads/engvarg_morgan_try_76.mp4" type="video/mp4"></video>')
+	$('<li><video controls><source src="http://bb682f038cf7102193ca-e2867f0f5275ff3f41fc3fd790e33cad.r73.cf3.rackcdn.com/uploads/engvarg_morgan_try_76.mp4" type="video/mp4"></video></li>')
 	.insertBefore("#vids li#vid1");
 
 });
