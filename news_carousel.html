@@ -61,10 +61,10 @@
 			}
 
 			function makeItemMarkup(itemJSON) {
-				var articleDiv = document.getElementsByTagName('articles');
-					var articleMarkup = '';
+				var articleDiv = $('#articles');
+				var articleMarkup = '';
 					
-					var numberOfNewsItems = itemJSON.length;
+				var numberOfNewsItems = itemJSON.length;
 					if (numberOfNewsItems > 0 && slideNumber < numberOfNewsItems) {
 						var articleTitle = itemJSON[slideNumber].title;
 						var articleContent = parseContent(itemJSON[slideNumber].content); //parse and split content into paragraphs		
