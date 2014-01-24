@@ -3,14 +3,171 @@
 <head>
 	<title>ENGLAND v AUSTRALIA</title>
 	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-	<script src="scripts/matchday_new.js?cache=20"></script>
-	<link rel="stylesheet" href="style/matchday_new.css?cache=20"/>
-	<meta name="viewport" content="width=initial-scale=1.0, maximum-scale=1.0, user-scalable=no"></head>
+	<meta name="viewport" content="width=initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style>
+@font-face {
+    font-family: 'FruitigerRoman';
+    src: url('./fonts/FrutigerLTStd-Roman.otf');
+}
+
+@font-face {
+    font-family: 'FruitigerBold';
+    src: url('./fonts/FrutigerLTStd-BoldCn.otf');
+}
+
+@font-face {
+    font-family: 'FruitigerBlack';
+    src: url('./fonts/FrutigerLTStd-ExtraBlackCn.otf');
+}
+
+@-webkit-keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+html, body, div, article, section, figure, img, h1, h2, p, table, thead, tr, th, td {margin:0px; padding:0px; outline:0; border:none; background:none;}
+
+body {
+    background-color:transparent;
+    color: #FFF;
+    font-family: 'FruitigerRoman' sans-serif;
+    font-size: 90%;
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body.programme-page {padding:15px;}
+body.news-carousel {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*programme page*/
+.prog-headlines, .prog-stats {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float:left; padding:15px;
+    height:96vh; overflow-y:scroll;
+    -webkit-overflow-scrolling: touch;
+}
+.prog-headlines {width:54.73%;}
+.prog-stats {width:45.27%;}
+@media screen and (max-width:1000px) {
+  .prog-headlines, .prog-stats {width:100%; height:auto;}
+}
+.android-tablet .prog-headlines {width:54.73%;}
+.android-tablet .prog-stats {width:45.27%;}
+
+.programme-page article,
+.news-carousel article {
+    background:hsla(0,0%,100%,0.2);
+    width:100%; margin-bottom:30px;
+    overflow: hidden;
+}
+
+/*news*/
+.prog-headlines figure,
+.news-carousel figure {
+    width:100%; 
+    height:auto; 
+    overflow:hidden;
+}
+.prog-headlines figure img,
+.news-carousel figure img {width:100%; height:auto;}
+.prog-headlines small.time,
+.news-carousel small.time {
+    margin:30px; float:right;
+    text-transform:uppercase;
+}
+.programme-page h1,
+.news-carousel h1 {
+    margin:30px 10px 20px 30px;
+    font-family: 'FruitigerBold';
+    font-size:1.5em;
+    text-transform: uppercase;
+}
+.programme-page p,
+.news-carousel p {margin:10px 30px; line-height:1.4; font-size: 0.8em;}
+.programme-page p:last-child,
+.news-carousel p:last-child {margin-bottom:30px;}
+.added-later {
+    -webkit-animation: fadeIn 1s linear; /* Safari 4+ */
+    -moz-animation: fadeIn 1s linear; /* Fx 5+ */
+    -o-animation: fadeIn 1s linear; /* Opera 12+ */
+    animation: fadeIn 1s linear;
+}
+
+/*head to head*/
+.programme-page table {width:100%;}
+.programme-page tbody tr:nth-of-type(2n-1) {background-color: hsla(0,0%,100%,0.2);}
+.programme-page th {font-family: 'FruitigerBold';}
+.programme-page th,
+.programme-page td {
+    padding:15px 0px;
+    border-bottom:1px solid #191d4d;
+    font-size:1em; text-transform: uppercase;
+    text-align: center;
+}
+
+/*players to watch*/
+.watch-players {display:none;}
+.watch-players header {overflow:hidden;}
+.watch-players header section {width:80.34%; float:left;}
+.watch-players header h2 {
+    padding:0px 30px; margin-top:-20px;
+    font-size:1em; font-weight:normal;
+    text-transform: uppercase;
+}
+.watch-players figure {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width:19.66%; padding:8px;
+    overflow: hidden;
+}
+.watch-players figure img {width:100%; height:auto;}
+
+.news-carousel {overflow:hidden;}
+.news-carousel article {position: relative; margin:0px;}
+.news-carousel article img {height:100%; width: auto;}
+.news-carousel article div {
+    overflow: none; overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    position: absolute; top:56%;
+    height: 45%; width: 100%;
+    background:hsla(233, 48%, 30%, 0.76);
+}
+
+</style>
+
+</head>
 <body class="news-carousel">
-<div id="articles"><article class="news-item" data-articleid="52de9ce93463630002050000" style="height: 896px;"><figure><img src="https://matchdayadminproduction.s3.amazonaws.com/uploads/news/image/52de9ce93463630002050000/ChrisRobshaw.jpg" alt="" style="width: 896px;"></figure><div><small class="time">21&nbsp;Jan&nbsp;2014</small><h1>Chris Robshaw captain for RBS 6 Nations</h1><p></p><p>IAN GRIGGS was this morning re-appointed England captain for the 2014 RBS 6 Nations.
+<div id="articles"><article class="news-item" data-articleid="52de9ce93463630002050000" style="height: 896px;"><figure><img src="https://matchdayadminproduction.s3.amazonaws.com/uploads/news/image/52de9ce93463630002050000/ChrisRobshaw.jpg" alt="" style="width: 896px;"></figure><div><small class="time">21&nbsp;Jan&nbsp;2014</small><h1>Chris Robshaw captain for RBS 6 Nations</h1><p></p>
+	<p>IAN GRIGGS3 was this morning re-appointed England captain for the 2014 RBS 6 Nations.
 Since taking the reins for Head Coach Stuart Lancaster’s first game against Scotland in February 2012 the Harlequins skipper has led England in 19 of their last 22 Tests – only missing the third Test in South Africa in June 2012 through injury and being rested for last summer’s series in Argentina.
 Lancaster said: “Chris is in the team on merit as a player first and foremost but he has also shown himself to be an outstanding leader for Harlequins and England. He led us well during the QBE Internationals and I have no doubt that, as he goes into his third RBS 6 Nations as captain, he will do likewise.”</p><p></p></div></article></div>
 	<script>
+
+var isiOS = (navigator.userAgent.match(/iPhone|iPad|iPod/i) !== null) ? true : false;
 
 			$(document).ready(function() {
 
@@ -82,6 +239,139 @@ Lancaster said: “Chris is in the team on merit as a player first and foremost 
 					}
 					setCorrectDimensions();
 			}
+
+			function getResponse(apiUrl, callback) {
+
+    $.ajax({
+      url: apiUrl,
+      dataType: 'json',
+      type: 'get',
+      beforeSend: function(request) {
+      	
+      },
+      success: function(data) {
+      	callback(data);
+      	console.log(data);
+      	localStorage['data'] = JSON.stringify(data);
+      },
+      error: function(data) {
+      	var data = localStorage["data"];
+        if (data){
+          callback(JSON.parse(localStorage["data"]));
+        }else{
+        	console.log('Really sorry but we can not retrieve news items at this current time, please check your internet connection');
+        }
+      }
+    });
+}
+
+
+function makeArticleMarkup(newsItems) {
+	var articleDiv = document.getElementsByClassName('prog-headlines');
+	var articleMarkup = '';
+	for (i=0; i<newsItems.length; i++) {
+		
+		//parse and split content into paragraphs
+		var articleContent = parseContent(newsItems[i].content);
+		//parse time to readable format
+		var articleTime = parseTime(newsItems[i].updated_at);
+		
+		var articleImage;
+		//display image if set
+		if (newsItems[i].image_url !== null) {
+			articleImage = '<img src="'+newsItems[i].stored_image_path+'" alt="" />';
+		
+		//else display video if set
+		} else if (newsItems[i].video_thumbnail_url !== '') {
+
+			if (isiOS) {
+				articleImage = '<video controls poster="'+newsItems[i].video_thumbnail_url+'"><source src="'+newsItems[i].video_url_hls+'" type="video/hls"></video>';
+			} else {
+				articleImage = '<video controls poster="'+newsItems[i].video_thumbnail_url+'"><source src="'+newsItems[i].video_url_web+'" type="video/mp4"></video>';
+			}
+
+		//else diplay nothing
+		} else {
+			articleImage = '';
+		}
+
+		articleMarkup += '<article class="news-item" data-articleid="'+newsItems[i]._id+'"><figure>'+articleImage+'</figure><small class="time">'+articleTime+'</small><h1>'+newsItems[i].title+'</h1><p>'+articleContent+'</p></article>';
+	}
+
+	// var articlesInDom = document.getElementsByClassName('news-item');
+	// console.log(articlesInDom.length);
+	// if (articlesInDom.length > 2) {
+	// 	articleMarkup += '<a href="#" class="show">Show More...</a>';
+	// 	$('.news-item:gt(2)').hide();
+	// 	$('.show').on('click', function(){
+	// 	  $('.news-item:visible:last').nextAll(':lt(3)').show();
+	// 	});
+	// }
+	articleDiv[0].innerHTML = articleMarkup;
+}
+
+function parseContent(content) {
+	var paragraphs;
+	var concatenated = '';
+	paragraphs = content.split("\n\r");
+	for (z=0; z<paragraphs.length; z++) {
+		concatenated += '<p>'+paragraphs[z]+'</p>';
+	}
+	return concatenated;
+}
+
+function parseTime(timestamp) {
+	var dateText = '';
+	var theDate = new Date(timestamp);
+	var theDay = theDate.getDate();
+	var theMonth = getMonthText(theDate.getMonth());
+	var theYear = theDate.getFullYear();
+	dateText = theDay+'&nbsp;'+theMonth+'&nbsp;'+theYear;
+	return dateText;
+}
+
+function getMonthText(monthNumber) {
+	var monthText;
+	switch(monthNumber) {
+		case 0:
+		monthText = 'Jan';
+		break;
+		case 1:
+		monthText = 'Feb';
+		break;
+		case 2:
+		monthText = 'Mar';
+		break;
+		case 3:
+		monthText = 'Apr';
+		break;
+		case 4:
+		monthText = 'May';
+		break;
+		case 5:
+		monthText = 'June';
+		break;
+		case 6:
+		monthText = 'July';
+		break;
+		case 7:
+		monthText = 'Aug';
+		break;
+		case 8:
+		monthText = 'Sept';
+		break;
+		case 9:
+		monthText = 'Oct';
+		break;
+		case 10:
+		monthText = 'Nov';
+		break;
+		case 11:
+		monthText = 'Dec';
+		break;
+	}
+	return monthText;
+}
 
 			</script>
 
