@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ENGLAND v AUSTRALIA</title>
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="scripts/matchday_new.js?cache=20"></script>
+	<link rel="stylesheet" href="style/matchday_new.css?cache=20"/>
+	<meta name="viewport" content="width=initial-scale=1.0, maximum-scale=1.0, user-scalable=no"></head>
+<body class="news-carousel">
+	<script>
+
+			$(document).ready(function() {
+
+				setCorrectDimensions();
+
+				apiUrl = "https://reflink-staging.herokuapp.com/news.json?count="+slideCount;
+
+				getResponse(apiUrl, makeItemMarkup);
+
+			});
+
+			var indexParam = getQueryVariable('index');
+			var slideNumber = 0;
+			if (indexParam) {
+				slideNumber = indexParam - 1;
+			}
+
+			var countParam = getQueryVariable('count');
+			var slideCount = 0;
+			if (countParam) {
+				slideCount = countParam;
+			}
+
+			function setCorrectDimensions() {
+
+				var viewportHeight = $(window).height();
+				var viewportWidth = $(window).width();
+				$_newsArticle = $('.news-carousel article');
+				$_newsImage = $('.news-carousel article img');
+				var imageWidth = $_newsImage.width();
+				var imageHeight = $_newsImage.height();
+
+				if (imageWidth > imageHeight) {
+					$_newsImage.height(viewportHeight);
+				} else {
+					$_newsImage.width(viewportWidth);
+				}
+
+				$_newsArticle.height(viewportHeight);
+			}
+
+			function getQueryVariable(variable) {
+       			var query = window.location.search.substring(1);
+       			var vars = query.split("&");
+		       for (var i=0;i<vars.length;i++) {
+		       		var pair = vars[i].split("=");
+		            if(pair[0] == variable){return pair[1];}
+		       }
+		       return(false);
+			}
+
+			function makeItemMarkup(itemJSON) {
+				var articleDiv = document.getElementsByTagName('body');
+					var articleMarkup = '';
+					
+					var numberOfNewsItems = itemJSON.length;
+					if (numberOfNewsItems > 0 && slideNumber < numberOfNewsItems) {
+						var articleTitle = itemJSON[slideNumber].title;
+						var articleContent = parseContent(itemJSON[slideNumber].content); //parse and split content into paragraphs		
+						var articleTime = parseTime(itemJSON[slideNumber].created_at); //parse time to readable format
+
+						var mediaMarkup = '<figure><img src="placeholder.png" alt="" /></figure>';  // need a placeholder image for worst cast scenario
+						if (itemJSON[slideNumber].image_url) {
+							mediaMarkup = '<figure><img src="' + itemJSON[slideNumber].image_url + '" alt="" /></figure>';
+						}
+
+						articleMarkup += '<article class="news-item" data-articleid="'+itemJSON[slideNumber]._id+'">' + mediaMarkup + '<div><small class="time">' + articleTime + '</small><h1>' + articleTitle + '</h1><p>' + articleContent + '</p></div></article>';
+						articleDiv[0].innerHTML = articleMarkup;
+					}
+					setCorrectDimensions();
+			}
+
+			</script>
+
+</body>
+</html>

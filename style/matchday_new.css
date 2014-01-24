@@ -1,0 +1,411 @@
+@font-face {
+    font-family: 'FruitigerRoman';
+    src: url('../fonts/FrutigerLTStd-Roman.otf');
+}
+
+@font-face {
+    font-family: 'FruitigerBold';
+    src: url('../fonts/FrutigerLTStd-BoldCn.otf');
+}
+
+@font-face {
+    font-family: 'FruitigerBlack';
+    src: url('../fonts/FrutigerLTStd-ExtraBlackCn.otf');
+}
+
+@-webkit-keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@-o-keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fadeIn {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+html, body, div, article, section, figure, img, h1, h2, p, table, thead, tr, th, td {margin:0px; padding:0px; outline:0; border:none; background:none;}
+
+body {
+    background-color:transparent;
+    color: #FFF;
+    font-family: 'FruitigerRoman' sans-serif;
+    font-size: 90%;
+    
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body.programme-page {padding:15px;}
+body.news-carousel {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*programme page*/
+.prog-headlines, .prog-stats {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float:left; padding:15px;
+    height:96vh; overflow-y:scroll;
+    -webkit-overflow-scrolling: touch;
+}
+.prog-headlines {width:54.73%;}
+.prog-stats {width:45.27%;}
+@media screen and (max-width:1000px) {
+  .prog-headlines, .prog-stats {width:100%; height:auto;}
+}
+.android-tablet .prog-headlines {width:54.73%;}
+.android-tablet .prog-stats {width:45.27%;}
+
+.programme-page article,
+.news-carousel article {
+    background:hsla(0,0%,100%,0.2);
+    width:100%; margin-bottom:30px;
+    overflow: hidden;
+}
+
+/*news*/
+.prog-headlines figure,
+.news-carousel figure {
+    width:100%; 
+    height:auto; 
+    overflow:hidden;
+}
+.prog-headlines figure img,
+.news-carousel figure img {width:100%; height:auto;}
+.prog-headlines small.time,
+.news-carousel small.time {
+    margin:30px; float:right;
+    text-transform:uppercase;
+}
+.programme-page h1,
+.news-carousel h1 {
+    margin:30px 10px 20px 30px;
+    font-family: 'FruitigerBold';
+    font-size:1.5em;
+    text-transform: uppercase;
+}
+.programme-page p,
+.news-carousel p {margin:10px 30px; line-height:1.4; font-size: 0.8em;}
+.programme-page p:last-child,
+.news-carousel p:last-child {margin-bottom:30px;}
+.added-later {
+    -webkit-animation: fadeIn 1s linear; /* Safari 4+ */
+    -moz-animation: fadeIn 1s linear; /* Fx 5+ */
+    -o-animation: fadeIn 1s linear; /* Opera 12+ */
+    animation: fadeIn 1s linear;
+}
+
+/*head to head*/
+.programme-page table {width:100%;}
+.programme-page tbody tr:nth-of-type(2n-1) {background-color: hsla(0,0%,100%,0.2);}
+.programme-page th {font-family: 'FruitigerBold';}
+.programme-page th,
+.programme-page td {
+    padding:15px 0px;
+    border-bottom:1px solid #191d4d;
+    font-size:1em; text-transform: uppercase;
+    text-align: center;
+}
+
+/*players to watch*/
+.watch-players {display:none;}
+.watch-players header {overflow:hidden;}
+.watch-players header section {width:80.34%; float:left;}
+.watch-players header h2 {
+    padding:0px 30px; margin-top:-20px;
+    font-size:1em; font-weight:normal;
+    text-transform: uppercase;
+}
+.watch-players figure {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width:19.66%; padding:8px;
+    overflow: hidden;
+}
+.watch-players figure img {width:100%; height:auto;}
+
+.news-carousel {overflow:hidden;}
+.news-carousel article {position: relative; margin:0px;}
+.news-carousel article img {height:100%; width: auto;}
+.news-carousel article div {
+    overflow: none; overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    position: absolute; top:56%;
+    height: 45%; width: 100%;
+    background:hsla(233, 48%, 30%, 0.76);
+}
+
+/*#livefeed ul,
+#vidlist {
+    list-style: none;
+    display: block;
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin:0;
+}
+#livefeed ul li,
+#vidlist li {
+    display: block;
+    float: left;
+    position: relative;
+    width: 96%;
+    color: #fff;
+    background: #0f0f2b;
+    margin: 1px 1%;
+    padding: 5px 1%;
+}
+#livefeed ul li span,
+#vidlist li span {
+    display: block;
+    float: left;
+    position: relative;
+    min-width: 120px;
+    min-height: 90px;
+    background: #000;
+}
+#livefeed ul div,
+#vidlist div {
+    position: absolute;
+    left: 130px;
+    overflow: hidden;
+    right: 5px;
+    bottom: 5px;
+    top: 5px;
+}
+#livefeed ul div h2,
+#vidlist div h2 {
+    text-transform: uppercase;
+    font-size: 14px;
+}
+#livefeed ul div h2, #livefeed ul div p,
+#vidlist div h2,#vidlist div p {
+    font-weight: 400;
+    margin: 2px 5px;
+    padding: 0;
+    line-height: 16px;
+    max-height:32px;
+    overflow: hidden;
+    display: block;
+}
+#livefeed ul li span em,
+#vidlist li span em {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    top:0;
+    line-height: 20px;
+    font-size: 12px;
+    text-shadow: 1px 1px 1px #000;
+    color: #fff;
+    z-index: 2;
+
+    background:#666 url('images/spinner.gif') center no-repeat;
+    opacity: 0.75;
+
+    display: none;
+}
+#livefeed ul li a img,
+#vidlist li a img {
+    z-index: 1;
+    position: absolute;
+}*/
+/** hide the video behind the thumbnail **/
+/*#livefeed ul li video.iOS,
+#vidlist li video.iOS {
+    position: absolute;
+    width: 120px;
+    display: block;
+    height: 90px;
+    z-index: 1;
+}
+
+div#vidholder {
+    background: #111132;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 10px 5px;
+}
+
+div#vidholder em {
+    border-radius: 30px;
+    background: #292825 url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAnUlEQVQYV2PU1FD9z8jIyPD//38GZAATY9TT1fofFBzKsHPHdoYPH96D1QgICDK4e3gyrFq5nIERZAIrKysDSNH2bVsZmJiYwJLr1q5m+P37N0QBSBdMEYi9bu0aoOQvsGlICtiApoSABTEUwOzcumUzWIG3jy/Yuk+fPjIwWlqY/QfZCRMAKeDj42fw9PJmAGmAOpINbifMqzBvAgC8mkfZc39r5AAAAABJRU5ErkJggg==) center no-repeat;
+    height: 20px;
+    width: 20px;
+    font-size: 18px;
+    display: block;
+    color: #fff;
+    text-align: center;
+    line-height: 18px;
+    font-style: normal;
+    box-shadow: 0 0 0 1px #858584;
+    margin: 5px 0;
+}
+#livefeed ul li div span,
+#vidlist li div span{
+    background:none;
+    min-width: 0;
+    min-height:0;
+    display: inline-block;
+    height:20px;
+    margin:2px 5px;
+    color:#9393a3;
+}
+
+#livefeed h1 em{
+    
+    margin:0 10px 0 0;
+    width: 10px;
+    height: 10px;
+    background-color: #F00;
+    border-radius: 10px;
+    box-shadow: #000 0 -1px 7px 1px, inset #600 0 -1px 9px, #F00 0 2px 12px;
+    display:inline-block;
+}
+
+div#vidholder video {
+    width: 100%;
+    max-width: 100%;
+}
+
+#mdintro {
+    position: relative;
+    width: 100%;
+    background: #272e55;
+}
+
+#mdintro img {
+    width: 100%;
+    max-width: 700px;
+    display: block;
+    margin: 0 auto;
+}
+
+#mdintro h3 {
+    position: absolute;
+    left: 50%;
+    right: 0;
+    top: 50%;
+    height: 40px;
+    margin-top: -20px;
+    font-size: 20px;
+}
+
+#mdintro h3 small {
+    clear: both;
+    display: block;
+    color: #9093a0;
+    font-size: 14px;
+}*/
+
+/* Stats table */
+/*article table {
+    width: 100%;
+    max-width: 100%;
+    text-transform: uppercase;
+}
+article table td {
+    width: 33%;
+    padding: 16px;
+}
+article table thead tr {
+    background: #100922;
+}
+article table tbody tr {
+    background: #0f0f2b;
+    white-space: nowrap;
+}
+
+article table tr td:nth-child(1) {
+    width: 20%;
+}
+article table tr td:nth-child(2) {
+    text-align: center;
+    width: 60%;
+}
+article table tr td:nth-child(3) {
+    text-align: right;
+    width: 20%;
+}*/
+
+/** Man in charge and player to watch **/
+/*article .ptw {
+    background: #0e0e26;
+    position: relative;
+    margin: 0 0 2px;
+    padding: 10px;
+}
+article .mic {
+    position: relative;
+    margin: 0 0 2px;
+    padding: 0px 10px 10px 10px;
+}
+article .ptw p.intro,article .mic p.intro {
+    position: absolute;
+    line-height: 15px;
+    top: 0;
+    left: 106px;
+    text-transform: uppercase;
+    font-weight: 700;
+    right: 0;
+}
+article .mic p.intro {
+    left: 157px;
+}
+article .ptw p.intro em,article .mic p.intro em {
+    font-style: normal;
+    color: #9494a4;
+}
+article .mic p.intro strong {
+    font-size: 20px;
+    line-height: 24px;
+    padding-bottom: 10px;
+}
+#livefeed ul div h2,
+#vidlist div h2,
+article thead tr td:nth-child(2),
+article .ptw p.intro strong{
+    font-weight:bold;
+    font-size:14px;
+}*/
+
+/** for older devices, float img behind to emulate background image **/
+/*#fixedbg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: none;
+}
+#fixedbg img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    top: -60px;
+}*/
+/** nth rows darked background **/
+/*#vidlist li:nth-child(2n),article table tbody tr:nth-child(2n) {
+    background: #0e0e26;
+}*/
