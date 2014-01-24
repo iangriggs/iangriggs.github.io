@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="style/matchday_new.css?cache=20"/>
 	<meta name="viewport" content="width=initial-scale=1.0, maximum-scale=1.0, user-scalable=no"></head>
 <body class="news-carousel">
+	<div id="articles"></div>
 	<script>
 
 			$(document).ready(function() {
@@ -60,7 +61,7 @@
 			}
 
 			function makeItemMarkup(itemJSON) {
-				var articleDiv = document.getElementsByTagName('body');
+				var articleDiv = document.getElementsByTagName('articles');
 					var articleMarkup = '';
 					
 					var numberOfNewsItems = itemJSON.length;
