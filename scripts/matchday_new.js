@@ -17,7 +17,7 @@ function getResponse(apiUrl, callback) {
         if (data){
           callback(JSON.parse(localStorage["data"]));
         }else{
-        	document.getElementsByClassName('prog-headlines')[0].innerHTML = '<p>We\'re really sorry but we can not retrieve news items at this current time, please check your internet connection';
+        	console.log('Really sorry but we can not retrieve news items at this current time, please check your internet connection');
         }
       }
     });
